@@ -1,0 +1,54 @@
+﻿@using HeadHunter.Models
+@model HeadHunter.Models.UnifiedModels.SignUpModel
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>HeadHunter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <div class="span3">
+        <h2>@ViewBag.Msg</h2>
+        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+        {
+            <h2>Sign Up</h2>
+            <form>
+                <label>Name and Surname</label>
+                @Html.TextBoxFor(m => m.Account.AccountFullName, new { @class = "form-control input-sm" })
+
+                <label>Email Address</label>
+                @Html.TextBoxFor(m => m.Account.AccountMail, new { @class = "form-control input-sm" })
+
+                <label>Github Username</label>
+                @Html.TextAreaFor(m => m.Profile.ProfileUsername, new { @class = "form-control input-sm" })
+
+                <label>Stackoverflow Username</label>
+                @Html.TextAreaFor(m => m.StackOverFlowUsername, new { @class = "form-control input-sm" })
+
+                <label>Password</label>
+                @Html.TextBoxFor(m => m.AccountPassword.AccountPassword1, new { @class = "form-control input-sm" })
+                <label><input type="checkbox" name="terms"> I agree with the <a href="#">Terms and Conditions</a>.</label>
+                @Html.RadioButtonFor(m => m.Account.AccountType, true) Employee
+                @Html.RadioButtonFor(m => m.Account.AccountType, false) Employer
+                <input type="submit" value="Sign up" class="btn btn-primary pull-right">
+                <div class="clearfix"></div>
+            </form>
+        }
+
+
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "ProfileGraph";
+    Layout = "~/Views/Shared/_LayoutWithoutLogin.cshtml";
+}
+
+@model HeadHunter.Models.UnifiedModels.SalesChartModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <div>
+        <div id="chart" style="width: 500px; height: 300px;"></div>
+        <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart', 'bar'] });
+
+            google.charts.setOnLoadCallback(function () {
+                var title = '@Model.Title';
+                var subtitle = '@Model.Subtitle';
+                var dataTable = new google.visualization.DataTable(
+                    @Html.Raw(Json.Encode(Model.DataTable))
+                );
+
+                drawBarChart('chart', title, subtitle, dataTable);
+                //drawColumnChart('chart', title, dataTable);
+            });
+
+            function drawBarChart(elementId, title, subtitle, dataTable) {
+                var options = {
+                    chart: {
+                        title: title,
+                        subtitle: subtitle
+                    }
+                };
+                var chart = new google.charts.Bar(document.getElementById(elementId));
+                chart.draw(dataTable, options);
+            }
+
+            function drawColumnChart(elementId, title, dataTable) {
+                var options = {
+                    title: title
+                };
+                var chart = new google.visualization.ColumnChart(document.getElementById(elementId));
+                chart.draw(dataTable, options);
+            }
+
+        </script>
+
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var i = 0;
+
+                google.visualization.arrayToDataTable
+
+                var data = google.visualization.arrayToDataTable([
+                    ['Task', 'Hours per Day'],
+                    ['@ViewBag.Diller[0]',@ViewBag.DilSayisi[0]],
+                    ['@ViewBag.Diller[1]', @ViewBag.DilSayisi[1]],
+                    ['@ViewBag.Diller[2]',@ViewBag.DilSayisi[2]],
+                    ['@ViewBag.Diller[3]', @ViewBag.DilSayisi[3]],
+                    ['@ViewBag.Diller[3]', @ViewBag.DilSayisi[4]]
+
+
+                ]);
+
+
+                var options = {
+                    title: 'Github Languages Per Repositories'
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                chart.draw(data, options);
+            }
+        </script>
+        <div id="piechart" style="width: 600px; height: 300px;"></div>
+
+
+
+        @using (Html.BeginForm("ProfileGraph", "Employee"))
+        {
+            @Html.TextBox("Text")
+            <br />
+            <input type="submit" value=" Send GithubUrl" />
+        }
+
+        @using (Html.BeginForm("ProfileGraph", "Employee"))
+        {
+            @Html.TextBox("Text")
+            <br />
+            <input type="submit" value="Send Mail" />
+        }
+
+
+    </div>
+
+    <div id="shareSpace" style="width: 100px; height: 50px;"></div>
+
+    <a href="#"
+       onclick="
+     window.open(
+     'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+     'facebook-share-dialog',
+     'width=626,height=436');
+     return false;">
+        <i class="fa fa-facebook"></i>Paylaş
+    </a>
+
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-size="large" data-count="none"></a>
+    <script>
+        !function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) {
+                js = d.createElement(s); js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");
+        </script>
+
+
+
+
+    <div>
+        @ViewBag.Dil <br />
+    </div>
+
+
+
+</body>
+</html>
+
+

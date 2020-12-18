@@ -1,0 +1,101 @@
+﻿@*bu sayfa site acildiginde ilk gozukecek sayfadir(login olunmadan onceki anasayfa)*@
+@{
+
+    ViewBag.Title = "Index";
+
+
+    if (HttpContext.Current.Session.Count == 0)
+    {
+
+        Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutWithoutLogin.cshtml";
+    }
+
+}
+
+
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<head>
+
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col=12 mt-3">
+                    <div class="jumbotron ">
+                        <h1 class="display-4">Welcome to HeadHunter!</h1>
+                        <p class="lead">Since our founding in 2019, HeadHunter has grown by leaps and bounds. From offering search about software engineer candidates, we can offer dozens of profiles—by listing their programming skills, projects and experiences. And starting from a simple website, we now have thousands of users around the world.  With this project, the profiles of registered users in social software platforms are analyzed and it is aimed that companies can efficiently find the personnel that suited the criteria sought.</p>
+                        <hr class="my-4">
+                        <p>HeadHunter’s mission is simple: to enable employers and employees to communicate with each other to be more productive and successful.</p>
+                        <p class="lead">
+                            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col=12 justify-content-center">
+                    <ul class="nav ">
+                        <li class="nav-item">
+                            <a class="navbar-btn" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-btn" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-btn" href="#">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<style>
+    body {
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+}
+</style>
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="653f8642c79049feb402b80d198dbc29" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="HeadHunterModel.Account" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.AccountPassword" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.BaseDataType" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.Profil" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.ProfileMeta" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.ProfileScore" Width="1.5" PointX="11.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.ProfilScan" Width="1.5" PointX="6" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.Source" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.SourceDataType" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.ViewProfileProgramLanguage" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HeadHunterModel.ViewProgramLanguage" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="HeadHunterModel.FK_AccountPassword_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="HeadHunterModel.FK_Profil_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="HeadHunterModel.FK_SourceDataType_BaseDataType" ManuallyRouted="false" />
+        <AssociationConnector Association="HeadHunterModel.FK_Profil_Source" ManuallyRouted="false" />
+        <AssociationConnector Association="HeadHunterModel.FK_ProfileMeta_Profil" ManuallyRouted="false" />
+        <AssociationConnector Association="HeadHunterModel.FK_ProfileScore_Profil" ManuallyRouted="false" />
+        <AssociationConnector Association="HeadHunterModel.FK_ProfileMeta_ProfilScan" ManuallyRouted="false" />
+        <AssociationConnector Association="HeadHunterModel.FK_ProfileMeta_SourceDataType" ManuallyRouted="false" />
+        <AssociationConnector Association="HeadHunterModel.FK_ProfileScore_ProfilScan" ManuallyRouted="false" />
+        <AssociationConnector Association="HeadHunterModel.FK_ProfileScore_SourceDataType" ManuallyRouted="false" />
+        <AssociationConnector Association="HeadHunterModel.FK_SourceDataType_Source" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HeadHunterModel.UserCount" Width="1.5" PointX="10.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
